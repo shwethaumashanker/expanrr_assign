@@ -18,11 +18,99 @@
       max-width: 1100px;
       margin: auto;
     }
-  .content {
-  max-width: 1100px;
-  margin: auto;
-  background: white;
-  padding: 10px;
+    .icon-bar {
+      left: 0;
+      position: fixed;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .icon-bar a {
+      display: block;
+      text-align: center;
+      padding: 16px;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 20px;
+    }
+
+    .icon-bar a:hover {
+      background-color: #000;
+    }
+
+    .facebook {
+      background: #3B5998;
+      color: white;
+    }
+
+    .twitter {
+      background: #55ACEE;
+      color: white;
+    }
+
+    .instagram {
+      background: #dd4b39;
+      color: white;
+    }
+
+    .linkedin {
+      background: #007bb5;
+      color: white;
+    }
+
+    .youtube {
+      background: #bb0000;
+      color: white;
+    }
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
 }
 </style>
 <body>
@@ -34,33 +122,76 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item active px-3">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown px-3">
+      <div class="dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Categories
+        </a>
+    		<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+          <li><a class="dropdown-item" href="#">Startups</a><li>
+          <li class="dropdown-submenu"><a class="dropdown-item" href="#">Business</a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" href="#">E-commerce</a>
+              <a class="dropdown-item" href="#">Tech</a>
+              <a class="dropdown-item" href="#">Lifestyle</a>
+              <a class="dropdown-item" href="#">Small business</a>
+            </ul>
+          </li>
+          <li class="dropdown-submenu"><a class="dropdown-item" href="#">Digital wisdom</a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" href="#">Marketing</a>
+              <a class="dropdown-item" href="#">Strategy</a>
+              <a class="dropdown-item" href="#">Books</a>
+              <a class="dropdown-item" href="#">Video</a>
+              <a class="dropdown-item" href="#">Research</a>
+            </ul>
+          </li>
+          <li class="dropdown-submenu"><a class="dropdown-item" href="#">Learn and grow</a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" href="#">Life</a>
+              <a class="dropdown-item" href="#">Adventure</a>
+              <a class="dropdown-item" href="#">Success</a>
+              <a class="dropdown-item" href="#">Leadership</a>
+              <a class="dropdown-item" href="#">Motivation</a>
+            </ul>
+          </li>
+        </ul>
+        </div>
+        </li>
+
+        <li class="nav-item dropdown px-3">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Connect
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Subscribe</a>
+          <a class="dropdown-item" href="#">Contact us</a>
+          <a class="dropdown-item" href="#">Join our team</a>
+          <a class="dropdown-item" href="#">Submit your story</a>
+          <a class="dropdown-item" href="#">Newsletters</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+
+      <li class="nav-item px-3">
+        <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item px-3">
+        <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
       </li>
     </ul>
+
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
+
+
+<h4 style="color:white;overflow:hidden; white-space:nowrap;">Popular<hr style="float: right; width: 92%;height: 1px;background-color: white;"/></h4>
 
 <div class="card-columns">
   <div class="card">
@@ -80,20 +211,19 @@
   </div>
   </div>
   <div class="card">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="post4.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <h5 class="card-title">HR tech innovations in the future</h5>
+      <p class="card-text">Innovations in the field of HR Tech have been pivotal in shaping the future of work. Many large enterprises and business leaders are now realizing the impact of HR Tech Innovations in the future of work.</p>
+      <p class="card-text"><small class="text-muted">Prasad Rajappan&nbsp; &nbsp; |&nbsp; &nbsp; 8 min read</small></p>
     </div>
   </div>
   <div class="card">
-    <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
+      <h5 class="card-title">6 reasons why your startup may fail</h5>
+      <p class="card-text">India has been a fostering environment for entrepreneurship and start-ups, being the 3rd largest ecosystem nurturing them. But a recent report by IBM Institute for Business Value and Oxford Economics found that 9 out of 10 start-ups fail in the first five years of beginning a start-up.</p>
+      <p class="card-text"><small class="text-muted">Sushmita Dutta&nbsp; &nbsp; |&nbsp; &nbsp; 7 min read</small></p>
+  </div>
   </div>
   <div class="card bg-primary text-white text-center p-3">
     <blockquote class="blockquote mb-0">
@@ -105,34 +235,67 @@
       </footer>
     </blockquote>
   </div>
-  <div class="card text-center">
+
+  <div class="card">
+    <img src="post5.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <h5 class="card-title">This digital platform is bridging the academy – industry gap by delivering industrial skills in demand</h5>
+      <p class="card-text">As COVID-19 has struck fatally it is time to rethink our system of imparting education. The time to think beyond classroom teaching has arrived.</p>
+      <p class="card-text"><small class="text-muted">Expanrr Staff&nbsp; &nbsp; |&nbsp; &nbsp; 5 min read</small></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="post2.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Happiness: Where does it come from?</h5>
+      <p class="card-text">Does having a successful life have anything to do with happiness? Even if you can be dubious about this, the answer is ‘No.’</p>
+      <p class="card-text"><small class="text-muted">Lalitha E&nbsp; &nbsp; |&nbsp; &nbsp; 5 min read</small></p>
     </div>
   </div>
   <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-  </div>
-  <div class="card p-3 text-right">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
-  <div class="card">
+    <img src="post6.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <h5 class="card-title">6 apps every startup founder must have in 2020</h5>
+      <p class="card-text">Technology has become an essential part of our lives. If there is any inconsistency found in the world, there is probably an app or software to solve that for us.</p>
+      <p class="card-text"><small class="text-muted">Sushmita Dutta&nbsp; &nbsp; |&nbsp; &nbsp; 6 min read</small></p>
     </div>
   </div>
+  <div class="card">
+    <img src="post3.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">20 Entrepreneurial must-reads for 2020</h5>
+      <p class="card-text">Books are the source of extreme knowledge. Reading the right book can do wonders to you, it can turn your world upside down and change the person you are right now, which is why it is important for the people in the business world to come across the right books. </p>
+      <p class="card-text"><small class="text-muted">Lalitha E&nbsp; &nbsp; |&nbsp; &nbsp; 4 min read</small></p>
+    </div>
+  </div>
+
+
 </div>
+<br>
+<br>
+
+<nav>
+  <ul class="pagination pg-purple justify-content-center ">
+    <li class="page-item">
+      <a class="page-link" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item active"><a class="page-link">1</a></li>
+    <li class="page-item"><a class="page-link">2</a></li>
+    <li class="page-item"><a class="page-link">3</a></li>
+    <li class="page-item"><a class="page-link">4</a></li>
+    <li class="page-item"><a class="page-link">5</a></li>
+    <li class="page-item">
+      <a class="page-link" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 <!-- Footer -->
 <footer class="page-footer font-small" style="background-color:white; position: absolute;width: 100%; left: 0;">
 
@@ -145,11 +308,9 @@
       <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
         <!-- Content -->
-        <h6 class="text-uppercase font-weight-bold">Company name</h6>
+        <h6 class="text-uppercase font-weight-bold">Expanrr</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
+        <p>Expanrr is an online media platform for all aspiring newbies to build their ambitions and take the opportunities of exploring their skills and talents.</p>
 
       </div>
       <!-- Grid column -->
@@ -158,20 +319,18 @@
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
         <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Products</h6>
+        <h6 class="text-uppercase font-weight-bold">Company</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a href="#!">MDBootstrap</a>
+        <button type="button" class="btn" style="background-color:white;">Advertise with us</button>
         </p>
         <p>
-          <a href="#!">MDWordPress</a>
+        <button type="button" class="btn" style="background-color:white;">FAQs</button>
         </p>
         <p>
-          <a href="#!">BrandFlow</a>
+        <button type="button" class="btn" style="background-color:white;">Terms and conditions</button>
         </p>
-        <p>
-          <a href="#!">Bootstrap Angular</a>
-        </p>
+
 
       </div>
       <!-- Grid column -->
@@ -180,19 +339,13 @@
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
         <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <h6 class="text-uppercase font-weight-bold" style="color:white;">Comapny</h6>
+        <br>
         <p>
-          <a href="#!">Your Account</a>
+        <button type="button" class="btn" style="background-color:white;">Accounts</button>
         </p>
         <p>
-          <a href="#!">Become an Affiliate</a>
-        </p>
-        <p>
-          <a href="#!">Shipping Rates</a>
-        </p>
-        <p>
-          <a href="#!">Help</a>
+        <button type="button" class="btn" style="background-color:white;">Privacy policy</button>
         </p>
 
       </div>
@@ -205,7 +358,7 @@
         <h6 class="text-uppercase font-weight-bold">Contact</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+          <i class="fas fa-home mr-3"></i>Address</p>
         <p>
           <i class="fas fa-envelope mr-3"></i> info@example.com</p>
         <p>
@@ -223,18 +376,25 @@
   <!-- Footer Links -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  <div class="footer-copyright text-center py-3"><hr>© 2019 Copyright&nbsp;:&nbsp;Expanrr
   </div>
   <!-- Copyright -->
 
 </footer>
+<div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+</div>
 <!-- Footer -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 </body>
 </html>
